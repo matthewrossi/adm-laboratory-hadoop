@@ -1,0 +1,83 @@
+image:
+  repository: farberg/apache-hadoop
+  tag: 3.3.2
+  pullPolicy: IfNotPresent
+
+# The version of the hadoop libraries being used in the image.
+hadoopVersion: 3.3.2
+logLevel: INFO
+
+# Select antiAffinity as either hard or soft, default is soft
+antiAffinity: "soft"
+
+hdfs:
+  nameNode:
+    pdbMinAvailable: 1
+
+    resources:
+      requests:
+        memory: "256Mi"
+        cpu: "10m"
+      limits:
+        memory: "2048Mi"
+        cpu: "1000m"
+
+  dataNode:
+    replicas: 2
+
+    pdbMinAvailable: 1
+
+    resources:
+      requests:
+        memory: "256Mi"
+        cpu: "10m"
+      limits:
+        memory: "2048Mi"
+        cpu: "1000m"
+
+  webhdfs:
+    enabled: false
+
+yarn:
+  resourceManager:
+    pdbMinAvailable: 1
+
+    resources:
+      requests:
+        memory: "256Mi"
+        cpu: "10m"
+      limits:
+        memory: "2048Mi"
+        cpu: "2000m"
+
+  nodeManager:
+    pdbMinAvailable: 1
+
+    # The number of YARN NodeManager instances.
+    replicas: 2
+
+    # Create statefulsets in parallel (K8S 1.7+)
+    parallelCreate: false
+
+    # CPU and memory resources allocated to each node manager pod.
+    # This should be tuned to fit your workload.
+    resources:
+      requests:
+        memory: "20Gi"
+        cpu: "2000m"
+      limits:
+        memory: "25Gi"
+        cpu: "9000m"
+
+persistence:
+  nameNode:
+    enabled: false
+    storageClass: "standard"
+    accessMode: ReadWriteOnce
+    size: 10Gi
+
+  dataNode:
+    enabled: false
+    storageClass: "standard"
+    accessMode: ReadWriteOnce
+    size: 50Gi
