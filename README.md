@@ -15,7 +15,7 @@ Follow installation instructions [here](https://docs.docker.com/get-docker/).
 ### kind
 
 [kind](https://sigs.k8s.io/kind) is a tool for running local Kubernetes
-clusters using Docker container “nodes”.
+clusters using Docker container "nodes".
 
 Follow installation instructions [here](https://kind.sigs.k8s.io/docs/user/quick-start/).
 
@@ -44,6 +44,12 @@ Clone this repository with:
 
 ```bash
 git clone https://github.com/matthewrossi/adm-laboratory-hadoop.git
+```
+
+Create a local Kubernetes clusters using Docker container “nodes”:
+
+```bash
+kind create cluster
 ```
 
 Verify the configuration in stable_hadoop_values.yaml, I’m currently keeping it simple, so no persistence.
@@ -88,3 +94,13 @@ bash expose_yarn.sh
 ```
 
 Connect locally to port 8088 to check the status of the jobs.
+
+## Delete the local Kubernetes cluster
+
+Don't forget to delete the local Kubernetes clusters with:
+
+```bash
+kind delete cluster
+```
+
+Otherwise `kind` will keep it running even after reboots.
