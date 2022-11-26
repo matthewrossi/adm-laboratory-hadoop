@@ -49,7 +49,7 @@ git clone https://github.com/matthewrossi/adm-laboratory-hadoop.git
 Create a local Kubernetes clusters using Docker container “nodes”:
 
 ```bash
-kind create cluster
+kind create cluster --config=kind-config.yaml
 ```
 
 Verify the configuration in stable_hadoop_values.yaml, I’m currently keeping it simple, so no persistence.
