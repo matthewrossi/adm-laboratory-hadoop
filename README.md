@@ -19,7 +19,7 @@ clusters using Docker container "nodes".
 
 Follow installation instructions [here](https://kind.sigs.k8s.io/docs/user/quick-start/).
 
-### kubctl
+### kubectl
 
 The Kubernetes command-line tool, [kubectl](https://kubernetes.io/docs/reference/kubectl/kubectl/),
 allows you to run commands against Kubernetes clusters.
