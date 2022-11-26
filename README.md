@@ -65,10 +65,12 @@ Once the pods are running, you should see:
 ```bash
 > kubectl get pods
 NAME                      READY   STATUS    RESTARTS   AGE
-hadoop-hadoop-hdfs-dn-0   1/1     Running   0          144m
-hadoop-hadoop-hdfs-nn-0   1/1     Running   0          144m
-hadoop-hadoop-yarn-nm-0   1/1     Running   0          144m
-hadoop-hadoop-yarn-rm-0   1/1     Running   0          144m
+hadoop-hadoop-hdfs-dn-0   1/1     Running   0          68m
+hadoop-hadoop-hdfs-dn-1   1/1     Running   0          60m
+hadoop-hadoop-hdfs-nn-0   1/1     Running   0          68m
+hadoop-hadoop-yarn-nm-0   1/1     Running   0          68m
+hadoop-hadoop-yarn-nm-1   1/1     Running   0          59m
+hadoop-hadoop-yarn-rm-0   1/1     Running   0          68m
 ```
 
 ## Launch a test job
