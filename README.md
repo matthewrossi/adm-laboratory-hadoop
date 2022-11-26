@@ -57,7 +57,7 @@ Verify the configuration in stable_hadoop_values.yaml, I’m currently keeping i
 Install Hadoop via Helm:
 
 ```bash
-bash install_hadoop.sh
+./install_hadoop.sh
 ```
 
 Once the pods are running, you should see:
@@ -78,7 +78,7 @@ hadoop-hadoop-yarn-rm-0   1/1     Running   0          68m
 Get a terminal on the YARN node manager:
 
 ```bash
-bash login_yarn.sh
+./login_yarn.sh
 ```
 
 You have now access to the Hadoop 3.3.2 cluster. Launch a test MapReduce job to compute pi:
@@ -92,7 +92,7 @@ bin/yarn jar share/hadoop/mapreduce/hadoop-mapreduce-examples-3.3.2.jar pi 16 10
 You can also export the YARN dashboard from the cluster to your local machine.
 
 ```bash
-bash expose_yarn.sh
+./expose_yarn.sh
 ```
 
 Connect locally to port 8088 to check the status of the jobs.
